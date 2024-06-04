@@ -1,20 +1,21 @@
+// Variables for each element we we add the event value to
 const eventKey = document.getElementById('event-key');
 const eventLocation = document.getElementById('event-location');
 const eventCode = document.getElementById('event-code');
 const eventWhich = document.getElementById('code-which');
 
+// For hiding or unhiding text to make it look nicer, maybe
 const keyCodeMessageText = document.getElementsByClassName('keycode-message-text')[0];
 const whichText = document.getElementById('info-text');
 const keyCodeHeader = document.getElementById('keycode-header-text');
 
 document.addEventListener('keydown', (event) => {
-  console.log(event.key);
-  console.log(event.which);
-  console.log(event.code);
+  // Assign event. values to the textContent of their paragraphs.
   eventKey.textContent = event.key;
   eventLocation.textContent = event.location;
   eventCode.textContent = event.code;
 
+  // Switch statement checks the value of event.location and for each number adds the string into the paragraph of eventLocation
   switch (event.location) {
     case 0:
       eventLocation.textContent = 'General Keys'
@@ -33,6 +34,8 @@ document.addEventListener('keydown', (event) => {
       break;
   }
 
+
+  // Hides or unhides text when we first press the key
   keyCodeMessageText.style.display = 'none';
   eventWhich.style.display = 'block';
   eventWhich.textContent = event.which;
