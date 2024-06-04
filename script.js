@@ -5,6 +5,7 @@ const eventWhich = document.getElementById('code-which');
 
 const keyCodeMessageText = document.getElementsByClassName('keycode-message-text')[0];
 const whichText = document.getElementById('info-text');
+const keyCodeHeader = document.getElementById('keycode-header-text');
 
 document.addEventListener('keypress', (event) => {
   console.log(event.key);
@@ -18,4 +19,5 @@ document.addEventListener('keypress', (event) => {
   eventWhich.style.display = 'block';
   eventWhich.textContent = event.which;
   whichText.style.display = 'block';
+  keyCodeHeader.style.display = 'block';
 });
