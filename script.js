@@ -9,6 +9,8 @@ const keyCodeMessageText = document.getElementsByClassName('keycode-message-text
 const whichText = document.getElementById('info-text');
 const keyCodeHeader = document.getElementById('keycode-header-text');
 
+// I changed keypress to keydown so it can take input for more than just text keys and number pad (0 and 3 on event.location)
+
 document.addEventListener('keydown', (event) => {
   // Assign event. values to the textContent of their paragraphs.
   eventKey.textContent = event.key;
@@ -32,6 +34,11 @@ document.addEventListener('keydown', (event) => {
     default:
       eventLocation.textContent = 'Unknown'
       break;
+  }
+  
+  // Add text display for when the user presses spacebar, currently shows empty
+  if (event.which == 32) {
+    eventKey.textContent = "spacebar"
   }
 
 
